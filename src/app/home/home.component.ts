@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { RequestService } from '../services/request.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,9 @@ export class HomeComponent implements OnInit {
   form: FormGroup;
   loading: boolean = true;
 
-  constructor() { }
+  constructor(
+    private requestService: RequestService
+  ) { }
 
   ngOnInit() {
     this.generateForm();
@@ -23,8 +26,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  search(){
-    console.log(this.form.value);
+  async search(){
+    let response = await this.requestService.getUser(this.form.get('username').value)
+    console.log("response", response);
   }
 
 }
