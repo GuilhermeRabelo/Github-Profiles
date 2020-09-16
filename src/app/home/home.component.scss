@@ -23,7 +23,16 @@ mat-toolbar {
         margin-bottom: 24px;
     }
 
-    .field {
-        width: 40%;
+    .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .field {
+            width: 40%;
+        }
     }
+
 }

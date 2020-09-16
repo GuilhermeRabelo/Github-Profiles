@@ -8,12 +8,18 @@
 <div class='search'>
     <img src='../../assets/img/github-light.png' class='logo'>
 
-    <mat-form-field class="field">
-        <mat-label>Github username</mat-label>
-        <input autocomplete="off" matInput placeholder="Ex. Pizza">
-    </mat-form-field>
+    <form [formGroup]="form" (ngSubmit)="search()" class='form'>
+        <mat-form-field class="field">
+            <mat-label>Github username</mat-label>
+            <input autocomplete="off" matInput formControlName='username'>
+            <mat-error *ngIf="form.get('username').hasError('required')">
+                This field is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
 
-    <button mat-flat-button color="primary">
-        Search user
-    </button>
+        <button mat-flat-button color="primary" type='submit'>
+            Search user
+        </button>
+    </form>
+
 </div>
