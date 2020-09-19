@@ -7,32 +7,106 @@ mat-toolbar {
     }
 }
 
-.search {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+.github-logo-content {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
+    margin-top: 32px;
 
-    .logo {
+    .github-logo {
         width: 180px;
         margin-bottom: 24px;
     }
+}
 
-    .form {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-        .field {
-            width: 40%;
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .field {
+        width: 50%;
+
+        strong {
+            color: #f44336;
         }
     }
 
+    .search-button {
+        width: 20%;
+    }
+
+}
+
+.spinner-content {
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 420px);
+    align-items: center;
+}
+
+.user-content {
+    display: flex;
+    justify-content: center;
+    margin: 32px 0 32px 0;
+
+    .mat-card-avatar {
+        background-size: cover !important;
+    }
+
+    .card {
+        margin: 0 16px;
+        max-width: 400px;
+
+        .location-company {
+            display: flex;
+            margin-top: 8px;
+    
+            .info {
+                display: flex;
+                align-items: center;
+    
+                &:first-child {
+                    margin-right: 16px;
+                }
+    
+                mat-icon {
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    .repo {
+        font-size: 14px;
+    }
+}
+
+    
+@media (max-width: 768px) {
+    .container {
+        margin: 0 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .form {
+        .field {
+            width: 100%;
+        }
+
+        .search-button {
+            width: 50%;
+        }
+    }
+
+    .user-content{
+        flex-direction: column;
+
+        .card {
+            max-width: 560px;
+            margin: 16px 0;
+        }
+    }
 }

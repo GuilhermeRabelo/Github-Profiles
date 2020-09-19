@@ -13,4 +13,9 @@ export class RequestService {
     let response: any = await this.httpClient.get(`${environment.api_url}/users/${username}`).toPromise();
     return response || []; //TODO throw exception when the statusCode it's not 200 or the response is null
   }
+
+  async getUserRepos(username){
+    let response: any = await this.httpClient.get(`${environment.api_url}/users/${username}/repos`).toPromise();
+    return response || []; //TODO throw exception when the statusCode it's not 200 or the response is null
+  }
 }
